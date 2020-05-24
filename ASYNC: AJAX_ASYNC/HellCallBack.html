@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const getRollNo = () =>{
+            setTimeout( () => {
+               console.log("All Students Roll No");
+               const rollNo= [1,2,3,4,5];
+               console.log(rollNo);
+               setTimeout( (roll_No) => {
+                   let biodata = {
+                       name: "Hira",
+                       age: 22
+                   }
+                   console.log(`Hello, I am ${biodata.name} and my age is ${biodata.age} and my Roll No is ${roll_No}`);
+                   setTimeout( (name) => {
+                       biodata.gender = "female";
+                       console.log(`Hello, I am ${biodata.name} and my age is ${biodata.age} and my Roll No is ${roll_No} and my gender is ${biodata.gender}`);
+
+                   },2000, biodata.name);
+
+               },2000, rollNo[1]);
+            },2000);
+        }
+        getRollNo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
