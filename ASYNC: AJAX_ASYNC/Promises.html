@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //executor
+        //Promise is an object
+        //has two outcome: reject => catch, resolve => then
+
+        //promise produce
+        const promise = new Promise( (resolve,reject) => {
+            //find roll no after 2s
+            //find name and age after 2s
+            setTimeout( () => {
+                const roll_No = [1,2,3,4,5];
+                resolve(roll_No);
+                reject('Error While Communicating');
+            },2000);
+        });
+        //Deep Example
+        //return Promise
+        const getBioData = (indexData) => {
+            return new  Promise ( (resolve,reject) => {
+                setTimeout( (indexData) => {
+                    let biodata = {
+                        name: 'Hira',
+                        age: 22
+                    }
+                    resolve(`IN bioDataGet, My roll no is ${indexData} and name is ${biodata.name}`);
+
+                },2000, indexData);
+            });
+        }
+        //promise consumed
+        //then parameter value is resolve argument
+        promise.then( (rollNo) => {
+            console.log(rollNo);
+            return getBioData(rollNo[1])
+        }).then((hello) =>  {
+                console.log(hello);
+            }).catch( (error) => {console.log(error);});
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
