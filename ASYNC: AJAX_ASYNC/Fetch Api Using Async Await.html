@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        async function apiGetData(){
+            const Data = await fetch(
+                'https://api.covid19api.com/summary');
+            const json_Data = await Data.json();
+            console.log(json_Data.Countries);
+        }
+        apiGetData();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
